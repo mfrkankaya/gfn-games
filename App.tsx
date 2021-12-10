@@ -1,21 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Fragment } from 'react'
+import { StatusBar } from 'expo-status-bar'
+import Home from 'screens/Home'
+import { GamesProvider } from 'contexts/GamesContext'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <Fragment>
+      <StatusBar style="light" backgroundColor="#0000" translucent />
+      <GamesProvider>
+        <Home />
+      </GamesProvider>
+    </Fragment>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
